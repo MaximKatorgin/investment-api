@@ -14,9 +14,9 @@ public class EtfService {
     @Autowired
     EtfRepository etfRepository;
 
-    public List<Etf> getAllEtfs(String portfolioName) {
+    public List<Etf> getAllEtfs(int portfolioId) {
         List<Etf> resultList = new ArrayList<>();
-        etfRepository.findAllByPortfolioName(portfolioName).forEach(resultList::add);
+        etfRepository.findAllByPortfolioId(portfolioId).forEach(resultList::add);
         return resultList;
     }
 

@@ -8,4 +8,6 @@ import java.util.List;
 
 public interface EtfRepository extends CrudRepository<Etf, Integer> {
     List<Etf> findAllByPortfolioName(String name);
+
+    List<Etf> findAllByPortfolioId(int id);
 }

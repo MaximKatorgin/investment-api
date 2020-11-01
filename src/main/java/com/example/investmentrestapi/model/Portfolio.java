@@ -7,6 +7,8 @@ import java.util.List;
 public class Portfolio {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
     private String name;
 
     public Portfolio() {

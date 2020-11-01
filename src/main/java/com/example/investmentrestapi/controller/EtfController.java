@@ -8,15 +8,15 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/{ portfolioName }/etf")
+@RequestMapping("/{ portfolioId }/etf")
 public class EtfController {
 
     @Autowired
     EtfService etfService;
 
     @GetMapping
-    public List<Etf> getEtfs(@PathVariable String portfolioName) {
-        return etfService.getAllEtfs(portfolioName);
+    public List<Etf> getEtfs(@PathVariable int portfolioId ) {
+        return etfService.getAllEtfs(portfolioId);
     }
 
     @PostMapping
