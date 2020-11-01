@@ -23,4 +23,17 @@ public class PortfolioService {
     public void addPortfolio(Portfolio portfolio) {
         portfolioRepository.save(portfolio);
     }
+
+    public void deletePortfolio(int portfolioId) {
+        Portfolio portfolio = portfolioRepository.findById(portfolioId).orElse(null);
+        if (portfolio != null) {
+            portfolioRepository.delete(portfolio);
+        }
+
+    }
+
+    public void updatePortfolio(int portfolioId, Portfolio portfolio) {
+        portfolio.setId(portfolioId);
+        portfolioRepository.save(portfolio);
+    }
 }

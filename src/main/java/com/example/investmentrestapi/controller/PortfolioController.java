@@ -22,4 +22,14 @@ public class PortfolioController {
     public void addPortfolio(@RequestBody Portfolio portfolio) {
         portfolioService.addPortfolio(portfolio);
     }
+
+    @PutMapping("/{portfolioId}")
+    public void updatePortfolio(@PathVariable int portfolioId, @RequestBody Portfolio portfolio) {
+        portfolioService.updatePortfolio(portfolioId, portfolio);
+    }
+
+    @DeleteMapping("/{portfolioId}")
+    public void deletePortfolio(@PathVariable int portfolioId) {
+        portfolioService.deletePortfolio(portfolioId);
+    }
 }
