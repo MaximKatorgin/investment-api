@@ -5,15 +5,19 @@ import javax.persistence.*;
 @Entity
 public class Etf {
 
+
+    //Change to ticker? instead of int id, beacuse still gonna be unique
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-
     private String ticker;
     private double price;
 
+
+    //To ManyToMany
     @ManyToOne
     private Portfolio portfolio;
+
 
     public Etf() {
     }
@@ -38,4 +42,14 @@ public class Etf {
     public void setPrice(double price) {
         this.price = price;
     }
+
+    public Portfolio getPortfolio() {
+        return portfolio;
+    }
+
+    public void setPortfolio(Portfolio portfolio) {
+        this.portfolio = portfolio;
+    }
+
 }
+
